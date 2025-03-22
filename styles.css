@@ -1,0 +1,117 @@
+body {
+    font-family: monaco,Consolas,Lucida Console,monospace; 
+
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #000000;
+    color: white;
+    padding: 1rem;
+  }
+  
+  nav a {
+    color: rgb(255, 255, 255);
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+
+ 
+  .description-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+  }
+  
+  .projects-section {
+    width: 100%; /* 100% of the viewport width */
+    margin: 0;
+    padding: 3rem 2rem;
+    background-color: black;
+    color: white;
+  }
+  
+
+  .projects-section {
+    background-color: black;
+    color: rgb(80, 204, 31);
+    padding: 3rem 2rem;
+    text-align: center;
+    min-height: 100vh;
+  }
+
+  .typewriter {
+    overflow: hidden;              /* Hides the text until it's revealed */
+    border-right: 0.15em solid white;  /* Creates a blinking cursor effect */
+    white-space: nowrap;           /* Keeps it on one line */
+    margin: 0 auto;                /* Centers the text if needed */
+    letter-spacing: 0.05em;        /* Slight space between letters */
+    animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end 4, hide-caret 0s 3.1s forwards;
+
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+  }
+  
+  @keyframes hide-caret {
+    to { border-color: transparent; }
+  }  
+  
+  
+  footer {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 1rem;
+  }
+  .about-section {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    gap: 3rem;
+    padding: 5rem;
+  }
+  
+  
+  .about-section-text {
+    max-width: 400px;
+    text-align: left;
+  }
+
+  .about-image {
+    display: flex;
+    gap: 3rem; /* space between the two images */
+  }
+  
+  .about-image img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0px; /* or 0 if you want perfect squares */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+
+  .container {
+    max-width: 100%;
+    width: 100%;
+  }
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+    
+  
+  
