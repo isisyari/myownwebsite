@@ -1,0 +1,83 @@
+body {
+    background-color: #000000;
+    color: rgb(14, 149, 206);
+    font-family: monaco,Consolas,Lucida Console,monospace; 
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #fcfcfc;
+    color: rgb(0, 0, 0);
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  nav a {
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+  
+  footer {
+    background-color: #f4f4f4;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 1rem;
+  }
+  .contact-info {
+    background-color: black;
+    color: rgb(11, 192, 205);
+    padding: 8rem;
+    width: 100%;
+    text-align: left;
+  }
+  .contact-section-text {
+    max-width: 400px;
+    text-align: left;
+  }
+
+  .typewriter {     /* letter EFFECT*/
+    overflow: hidden;              /* Hides the text until it's revealed */
+    border-right: 0.15em solid white;  /* Creates a blinking cursor effect */
+    white-space: nowrap;           /* Keeps it on one line */
+    margin: 0 auto;                /* Centers the text if needed */
+    letter-spacing: 0.05em;        /* Slight space between letters */
+    animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end 4, hide-caret 0s 3.1s forwards;
+
+  }
+  
+  @keyframes typing {   /* KEYFRAMES N TOOLS FOR ADJUSTABLE SCREEN */
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+  }
+  
+  @keyframes hide-caret {
+    to { border-color: transparent; }
+  }  
+
+  @media (max-width: 900px) {
+    .projects-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
