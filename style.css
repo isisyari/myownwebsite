@@ -1,83 +1,392 @@
+/* ========================================
+   CONTACT PAGE STYLES
+   ======================================== */
+
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-terminal: #1a1a1a;
+  --bg-card: #0d1117;
+  --green-primary: #00ff41;
+  --green-dim: #00cc33;
+  --green-glow: rgba(0, 255, 65, 0.3);
+  --cyan: #00d4ff;
+  --purple: #bd93f9;
+  --orange: #ffb86c;
+  --yellow: #f1fa8c;
+  --white: #f8f8f2;
+  --gray: #6272a4;
+  --border-color: #30363d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
-    background-color: #000000;
-    color: rgb(14, 149, 206);
-    font-family: monaco,Consolas,Lucida Console,monospace; 
-    margin: 0;
-    padding: 0;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Lucida Console', monospace;
+  background-color: var(--bg-dark);
+  color: var(--green-primary);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* ========================================
+   TERMINAL WINDOW
+   ======================================== */
+
+.terminal-window {
+  max-width: 1400px;
+  margin: 2rem auto;
+  background-color: var(--bg-terminal);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow:
+    0 0 0 1px var(--border-color),
+    0 25px 50px -12px rgba(0, 0, 0, 0.8),
+    0 0 60px var(--green-glow);
+  overflow: hidden;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================
+   HEADER & NAVIGATION
+   ======================================== */
+
+header {
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  background-color: #161b22;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-buttons span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.btn-close { background-color: #ff5f56; }
+.btn-minimize { background-color: #ffbd2e; }
+.btn-maximize { background-color: #27ca40; }
+
+.terminal-title {
+  margin-left: 1rem;
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+nav {
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav .prompt {
+  color: var(--cyan);
+  font-weight: bold;
+}
+
+nav a {
+  color: var(--green-primary);
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+nav a:hover {
+  background-color: rgba(0, 255, 65, 0.1);
+  border-color: var(--green-dim);
+  text-shadow: 0 0 10px var(--green-glow);
+}
+
+/* ========================================
+   TERMINAL ELEMENTS
+   ======================================== */
+
+.terminal-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.prompt {
+  color: var(--cyan);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.command {
+  color: var(--white);
+}
+
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+
+main {
+  flex: 1;
+  padding: 3rem 2rem;
+}
+
+/* ========================================
+   CONTACT SECTION
+   ======================================== */
+
+.contact-section {
+  max-width: 700px;
+}
+
+.contact-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 3rem;
+}
+
+.json-output {
+  color: var(--white);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.contact-item {
+  padding: 0.4rem 0;
+  padding-left: 1.5rem;
+}
+
+.contact-item.nested {
+  padding-left: 3rem;
+}
+
+.json-key {
+  color: var(--purple);
+}
+
+.json-colon {
+  color: var(--white);
+  margin: 0 0.5rem;
+}
+
+.json-value {
+  color: var(--green-primary);
+}
+
+.json-value.link {
+  text-decoration: none;
+  border-bottom: 1px dashed var(--green-dim);
+  transition: all 0.2s ease;
+}
+
+.json-value.link:hover {
+  color: var(--cyan);
+  border-bottom-color: var(--cyan);
+  text-shadow: 0 0 10px var(--green-glow);
+}
+
+.json-comma {
+  color: var(--white);
+}
+
+.json-object {
+  color: var(--yellow);
+}
+
+/* ========================================
+   SOCIAL LINKS
+   ======================================== */
+
+.social-links {
+  margin-top: 2rem;
+}
+
+.social-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-card:hover {
+  border-color: var(--green-primary);
+  box-shadow: 0 0 20px var(--green-glow);
+  transform: translateY(-3px);
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: var(--cyan);
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.social-name {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+.social-card:hover .social-name {
+  color: var(--green-primary);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+}
+
+footer p {
+  color: var(--gray);
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid var(--green-primary);
+  white-space: nowrap;
+  animation:
+    typing 2s steps(20, end) forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--green-primary); }
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 900px) {
+  .terminal-window {
+    margin: 1rem;
   }
-  
-  header {
-    background-color: #fcfcfc;
-    color: rgb(0, 0, 0);
-    padding: 1rem;
-    text-align: left;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
   }
-  
-  nav a {
-    margin: 0 10px;
-    text-decoration: none;
+
+  .terminal-window {
+    margin: 0.5rem;
   }
-  
+
   main {
-    padding: 2rem;
+    padding: 2rem 1rem;
   }
-  
-  footer {
-    background-color: #f4f4f4;
-    color: rgb(0, 0, 0);
-    text-align: center;
+
+  .contact-card {
     padding: 1rem;
   }
-  .contact-info {
-    background-color: black;
-    color: rgb(11, 192, 205);
-    padding: 8rem;
-    width: 100%;
-    text-align: left;
-  }
-  .contact-section-text {
-    max-width: 400px;
-    text-align: left;
+
+  .contact-item {
+    padding-left: 1rem;
   }
 
-  .typewriter {     /* letter EFFECT*/
-    overflow: hidden;              /* Hides the text until it's revealed */
-    border-right: 0.15em solid white;  /* Creates a blinking cursor effect */
-    white-space: nowrap;           /* Keeps it on one line */
-    margin: 0 auto;                /* Centers the text if needed */
-    letter-spacing: 0.05em;        /* Slight space between letters */
-    animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end 4, hide-caret 0s 3.1s forwards;
+  .contact-item.nested {
+    padding-left: 2rem;
+  }
 
+  nav {
+    padding: 0.75rem 1rem;
+    gap: 1rem;
   }
-  
-  @keyframes typing {   /* KEYFRAMES N TOOLS FOR ADJUSTABLE SCREEN */
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: white; }
-  }
-  
-  @keyframes hide-caret {
-    to { border-color: transparent; }
-  }  
 
-  @media (max-width: 900px) {
-    .projects-grid {
-      grid-template-columns: 1fr 1fr;
-    }
+  .social-grid {
+    justify-content: center;
   }
-  
-  @media (max-width: 600px) {
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
+
+  .social-card {
+    width: 90px;
+    height: 90px;
   }
-  
-  
-  html, body {
-    width: 100%;
-    overflow-x: hidden;
-  }
+}
+
+/* ========================================
+   SCROLLBAR & SELECTION
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green-dim);
+}
+
+::selection {
+  background: var(--green-primary);
+  color: var(--bg-dark);
+}

@@ -3,71 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
+  <title>Isis Correa Tume | Portfolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header> <!--header top section -->
-    <h1 class="typewriter">Welcome to My Website!</h1>  
-    <nav>
-      <a href="index.html">Projects/Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-  <section class="about-section"> <!--ABOUT SECTION-->
-    <div class="about-section-text">
-      <h2>Isis Correa Tume</h2>
-      <p>Computer Science and Economics <br> Bachelor Student</p>
-    </div>
-    <div class="about-image">
-      <img src="your-photo.jpeg" alt="Isis Correa Tume">
-      <img src="second-photo.jpg" alt="Second Image">
-      <img src="Third-picture.jpeg" alt="Third-picture">
-    </div>
-  </section>    
-  <section class="projects-section"> <!--PROJECT SECTION-->
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <!-- Project 1 -->
-      <a href="https://github.com/isisyari/ChiBot-Repository.git" target="_blank" class="project-card">
-        <img src="Project2.jpeg" alt="Project 1">
-        <div class="project-info">
-          <p>Data Transformation</p>
+  <div class="terminal-window">
+    <header>
+      <div class="terminal-header">
+        <div class="terminal-buttons">
+          <span class="btn-close"></span>
+          <span class="btn-minimize"></span>
+          <span class="btn-maximize"></span>
         </div>
-      </a>
-      
-      <!-- Project 2 -->
-      <a href="https://github.com/isisyari/game-project.git" target="_blank" class="project-card">
-        <img src="Project1.jpeg" alt="Game Project in Progress">
-        <div class="project-info">
-          <p>Eating game(in progress)</p>
-        </div>
-      </a>
-      
-      <!-- Project 3 -->
-      <a href="https://github.com/isisyari/myownwebsite.git" target="_blank" class="project-card">
-        <img src="Project3.jpeg" alt="Project 3">
-        <div class="project-info">
-          <p>My-Website</p>
-        </div>
-      </a>
+        <span class="terminal-title">isis@portfolio:~</span>
+      </div>
+      <nav>
+        <span class="prompt">$</span>
+        <a href="index.html">./home</a>
+        <a href="about.html">./about</a>
+        <a href="contact.html">./contact</a>
+      </nav>
+    </header>
 
-       <!-- Project 4 -->
-       <a href="https://github.com/isisyari/ServiceHealth.git" target="_blank" class="project-card">
-        <img src="service.png" alt="Service Health Dashboard">
-        <div class="project-info">
-          <p>Real-time monitoring dashboard to track uptime and latency of external API services</p>
-        </div>
-      </a>
+    <section class="hero-section">
+      <div class="terminal-line">
+        <span class="prompt">$</span>
+        <span class="command typewriter">whoami</span>
+      </div>
+      <h1 class="output">Isis Correa Tume</h1>
+      <p class="subtitle">Computer Science & Economics @ Lake Forest College</p>
+      <p class="highlight">// 2nd Place Winner - Lake Forest College Hackathon 2025</p>
+    </section>
 
-    </div>
-  </section>
-  <!--FOOOTTTEERRR-->
-  <footer>
-    <p>© 2025 Isis Correa Tume</p>
-  </footer>
+    <section class="about-section">
+      <div class="terminal-line">
+        <span class="prompt">$</span>
+        <span class="command">cat about.txt</span>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p class="output"><span class="keyword">Aspiring startup founder</span> currently building <a href="#" class="link">Arrivo</a> — an app designed to help international students navigate their journey abroad.</p>
+          <p class="output">I build applications that create meaningful impact. My focus is on developing software solutions that help others while leveraging <span class="keyword">AI tools</span> and <span class="keyword">automation</span> to increase efficiency and scale.</p>
+          <p class="output">Beyond code, I explore the intersection of <span class="keyword">AI and the humanities</span>. Having studied Philosophy of Mind and the ethical implications of artificial intelligence, I'm passionate about understanding how technology shapes human experience and society.</p>
+        </div>
+        <div class="about-images">
+          <img src="your-photo.jpeg" alt="Isis Correa Tume">
+          <img src="second-photo.jpg" alt="Second Image">
+          <img src="Third-picture.jpeg" alt="Third Picture">
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-section">
+      <div class="terminal-line">
+        <span class="prompt">$</span>
+        <span class="command">ls ./projects/</span>
+      </div>
+      <div class="projects-grid">
+
+        <!-- Project 1: ChiBot -->
+        <a href="https://github.com/isisyari/ChiBot-Repository" target="_blank" class="project-card">
+          <div class="project-icon">
+            <span class="icon-symbol">{ai}</span>
+          </div>
+          <div class="project-info">
+            <h3>ChiBot</h3>
+            <p>AI-powered platform for the Chicago History Museum featuring an intelligent assistant to help visitors explore the museum's collection.</p>
+            <span class="tech-tag">AI</span>
+            <span class="tech-tag">NLP</span>
+            <span class="tech-tag">Python</span>
+          </div>
+        </a>
+
+        <!-- Project 2: Service Health -->
+        <a href="https://github.com/isisyari/ServiceHealth.git" target="_blank" class="project-card">
+          <div class="project-icon">
+            <span class="icon-symbol">[:::]</span>
+          </div>
+          <div class="project-info">
+            <h3>Service Health</h3>
+            <p>Real-time monitoring dashboard to track uptime, latency, and health status of external API services.</p>
+            <span class="tech-tag">Monitoring</span>
+            <span class="tech-tag">APIs</span>
+          </div>
+        </a>
+
+        <!-- Project 3: Metamorphosis -->
+        <a href="https://github.com/isisyari/metamorphosis" target="_blank" class="project-card">
+          <div class="project-icon">
+            <span class="icon-symbol">~^~</span>
+          </div>
+          <div class="project-info">
+            <h3>Metamorphosis</h3>
+            <p>Interactive art installation using computer vision to change butterfly colors through pinch gestures. Created for the Art Club presentation.</p>
+            <span class="tech-tag">Computer Vision</span>
+            <span class="tech-tag">Art</span>
+          </div>
+        </a>
+
+        <!-- Project 4: This Website -->
+        <a href="https://github.com/isisyari/myownwebsite.git" target="_blank" class="project-card">
+          <div class="project-icon">
+            <span class="icon-symbol">&lt;/&gt;</span>
+          </div>
+          <div class="project-info">
+            <h3>Portfolio Site</h3>
+            <p>This terminal-styled portfolio website you're viewing right now. Built with vanilla HTML, CSS, and JavaScript.</p>
+            <span class="tech-tag">HTML/CSS</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <footer>
+      <div class="terminal-line">
+        <span class="prompt">$</span>
+        <span class="command blink">_</span>
+      </div>
+      <p>&copy; 2025 Isis Correa Tume | Built with passion and curiosity</p>
+    </footer>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
-

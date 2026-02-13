@@ -1,136 +1,581 @@
-body {   /* BODY FONT STYLE AND MARGINS,ETC */
-    font-family: monaco,Consolas,Lucida Console,monospace; 
+/* ========================================
+   ABOUT PAGE STYLES
+   ======================================== */
 
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #000000;
-    color: white;
-    padding: 1rem;
-  }
-  
-  nav a {     /* NAVIGATOR STUFF */
-    color: rgb(255, 255, 255);
-    margin: 0 10px;
-    text-decoration: none;
-  }
-  
-  main {
-    padding: 2rem;
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-terminal: #1a1a1a;
+  --bg-card: #0d1117;
+  --green-primary: #00ff41;
+  --green-dim: #00cc33;
+  --green-glow: rgba(0, 255, 65, 0.3);
+  --cyan: #00d4ff;
+  --purple: #bd93f9;
+  --orange: #ffb86c;
+  --white: #f8f8f2;
+  --gray: #6272a4;
+  --border-color: #30363d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Lucida Console', monospace;
+  background-color: var(--bg-dark);
+  color: var(--green-primary);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* ========================================
+   TERMINAL WINDOW
+   ======================================== */
+
+.terminal-window {
+  max-width: 1400px;
+  margin: 2rem auto;
+  background-color: var(--bg-terminal);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow:
+    0 0 0 1px var(--border-color),
+    0 25px 50px -12px rgba(0, 0, 0, 0.8),
+    0 0 60px var(--green-glow);
+  overflow: hidden;
+}
+
+/* ========================================
+   HEADER & NAVIGATION
+   ======================================== */
+
+header {
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  background-color: #161b22;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-buttons span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.btn-close { background-color: #ff5f56; }
+.btn-minimize { background-color: #ffbd2e; }
+.btn-maximize { background-color: #27ca40; }
+
+.terminal-title {
+  margin-left: 1rem;
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+nav {
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav .prompt {
+  color: var(--cyan);
+  font-weight: bold;
+}
+
+nav a {
+  color: var(--green-primary);
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+nav a:hover {
+  background-color: rgba(0, 255, 65, 0.1);
+  border-color: var(--green-dim);
+  text-shadow: 0 0 10px var(--green-glow);
+}
+
+/* ========================================
+   TERMINAL ELEMENTS
+   ======================================== */
+
+.terminal-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.prompt {
+  color: var(--cyan);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.command {
+  color: var(--white);
+}
+
+.output {
+  color: var(--green-primary);
+  text-shadow: 0 0 20px var(--green-glow);
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero-section {
+  padding: 3rem 2rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero-section h1 {
+  font-size: 2rem;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* ========================================
+   WORK SECTION
+   ======================================== */
+
+.work-section {
+  padding: 2rem;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.work-card {
+  display: flex;
+  gap: 1.5rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.work-card:hover {
+  border-color: var(--green-primary);
+  box-shadow: 0 0 30px var(--green-glow);
+  transform: translateY(-3px);
+}
+
+.work-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--bg-terminal);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-text {
+  color: var(--green-primary);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.work-info h3 {
+  color: var(--cyan);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.work-tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background-color: rgba(189, 147, 249, 0.1);
+  color: var(--purple);
+  font-size: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--purple);
+}
+
+.work-date {
+  display: block;
+  color: var(--gray);
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.work-card.featured {
+  border-color: var(--cyan);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(0, 212, 255, 0.05) 100%);
+}
+
+.work-card.featured:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+.work-icon.jpmc {
+  background: linear-gradient(135deg, #005eb8 0%, #003a70 100%);
+  border-color: #005eb8;
+}
+
+.work-icon.jpmc .icon-text {
+  color: var(--white);
+}
+
+.work-info p {
+  color: var(--gray);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-tag {
+  padding: 0.2rem 0.5rem;
+  background-color: rgba(0, 255, 65, 0.1);
+  color: var(--green-dim);
+  font-size: 0.7rem;
+  border-radius: 3px;
+  border: 1px solid var(--green-dim);
+}
+
+.resume-cta {
+  margin-top: 1rem;
+}
+
+.cta-text {
+  color: var(--orange);
+  font-size: 0.85rem;
+}
+
+/* ========================================
+   ACHIEVEMENTS SECTION
+   ======================================== */
+
+.achievements-section {
+  padding: 2rem;
+  background-color: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.achievement-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: var(--bg-terminal);
+  border: 1px solid var(--orange);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(255, 184, 108, 0.2);
+}
+
+.achievement-card.academic {
+  border-color: var(--cyan);
+}
+
+.achievement-card.academic:hover {
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.2);
+}
+
+.achievement-card.policy {
+  border-color: var(--purple);
+}
+
+.achievement-card.policy:hover {
+  box-shadow: 0 0 25px rgba(189, 147, 249, 0.2);
+}
+
+.achievement-card.policy .achievement-info h3 {
+  color: var(--purple);
+}
+
+.achievement-card.policy .year-tag {
+  background-color: rgba(189, 147, 249, 0.1);
+  color: var(--purple);
+  border-color: var(--purple);
+}
+
+.trophy {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--orange), #ff9500);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--bg-dark);
+  flex-shrink: 0;
+}
+
+.trophy.policy {
+  background: linear-gradient(135deg, var(--purple), #9b59b6);
+}
+
+.trophy.dean {
+  background: linear-gradient(135deg, var(--cyan), #0099cc);
+}
+
+.achievement-info h3 {
+  color: var(--orange);
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+
+.achievement-card.academic .achievement-info h3 {
+  color: var(--cyan);
+}
+
+.achievement-info p {
+  color: var(--gray);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin-bottom: 0.6rem;
+}
+
+.year-tag {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  background-color: rgba(255, 184, 108, 0.1);
+  color: var(--orange);
+  font-size: 0.7rem;
+  border-radius: 4px;
+  border: 1px solid var(--orange);
+}
+
+.achievement-card.academic .year-tag {
+  background-color: rgba(0, 212, 255, 0.1);
+  color: var(--cyan);
+  border-color: var(--cyan);
+}
+
+/* ========================================
+   INTERESTS SECTION
+   ======================================== */
+
+.interests-section {
+  padding: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.interest-item {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.interest-item:hover {
+  border-color: var(--purple);
+  box-shadow: 0 0 20px rgba(189, 147, 249, 0.2);
+}
+
+.interest-icon {
+  display: inline-block;
+  color: var(--purple);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.interest-item h4 {
+  color: var(--cyan);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.interest-item p {
+  color: var(--gray);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+}
+
+footer p {
+  color: var(--gray);
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid var(--green-primary);
+  white-space: nowrap;
+  animation:
+    typing 2s steps(20, end) forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--green-primary); }
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 900px) {
+  .terminal-window {
+    margin: 1rem;
   }
 
- 
-  .description-text {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin-top: 0.5rem;
-  }
-  
-
-  .work-section {
-    background-color: black;
-    color: rgb(80, 204, 31);
-    padding: 3rem 2rem; /* You can even reduce this if needed */
-    text-align: left;
-  }
-  
   .work-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
+    grid-template-columns: 1fr;
   }
-  
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .terminal-window {
+    margin: 0.5rem;
+  }
+
+  .hero-section,
+  .work-section,
+  .achievements-section,
+  .interests-section {
+    padding: 1.5rem 1rem;
+  }
+
   .work-card {
-    text-decoration: none;
-    color: inherit;
-    border: 1px solid #444;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .work-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  }
-  
-  .work-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .work-info {
-    background-color: #222;
-    color: white;
-    padding: 2rem;
+    flex-direction: column;
+    gap: 1rem;
     text-align: center;
   }
-  
-  .work-info h3 {
-    margin-bottom: 0.7rem;
-  }
-  
-  .work-info p {
-    font-size: 0.9rem;
-    color: #aaa;
-  }
-  
 
-  .typewriter {     /* letter EFFECT*/
-    overflow: hidden;              /* Hides the text until it's revealed */
-    border-right: 0.15em solid white;  /* Creates a blinking cursor effect */
-    white-space: nowrap;           /* Keeps it on one line */
-    margin: 0 auto;                /* Centers the text if needed */
-    letter-spacing: 0.05em;        /* Slight space between letters */
-    animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end 4, hide-caret 0s 3.1s forwards;
+  .work-icon {
+    margin: 0 auto;
+  }
 
+  .skills {
+    justify-content: center;
   }
-  
-  @keyframes typing {   /* KEYFRAMES N TOOLS FOR ADJUSTABLE SCREEN */
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: white; }
-  }
-  
-  @keyframes hide-caret {
-    to { border-color: transparent; }
-  }  
 
-  @media (max-width: 900px) {
-    .projects-grid {
-      grid-template-columns: 1fr 1fr;
-    }
+  nav {
+    padding: 0.75rem 1rem;
+    gap: 1rem;
   }
-  
-  @media (max-width: 600px) {
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  
-  
-  footer {   /* footer*/
-    background-color: #f4f4f4;
-    text-align: center;
-    padding: 1rem;
-  }
-  
 
-  .container {
-    max-width: 100%;
-    width: 100%;
+  .interests-grid {
+    grid-template-columns: 1fr;
   }
-  html, body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-    
+}
+
+/* ========================================
+   SCROLLBAR & SELECTION
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green-dim);
+}
+
+::selection {
+  background: var(--green-primary);
+  color: var(--bg-dark);
+}

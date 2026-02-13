@@ -3,47 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me</title>
+  <title>About | Isis Correa Tume</title>
   <link rel="stylesheet" href="styleabout.css">
 </head>
 <body>
-  <header> <!--header top section -->
-    <h1 class="typewriter">About Me!</h1>  
-    <nav>
-      <a href="index.html">Projects/Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <section class="work-section">
-    <h2>Work Experience</h2>
-    <div class="work-grid">
-      <a href="https://www.lakeforest.edu/academics/human-grant/research-assistants" target="_blank" class="work-card">
-        <img src="research.jpeg" alt="Research Project">
-        <div class="work-info">
-          <h3>Research Assistant</h3>
-          <p>Working on AI-related research projects and building new courses<br> such as "Migration & AI in Spain/Latin America"<br> Collaborated in data management projects with Chicago History Museum.</p>
+  <div class="terminal-window">
+    <header>
+      <div class="terminal-header">
+        <div class="terminal-buttons">
+          <span class="btn-close"></span>
+          <span class="btn-minimize"></span>
+          <span class="btn-maximize"></span>
         </div>
-      </a>
-      <a href="resume.pdf" target="_blank" class="work-card">
-        <img src="resume.jpeg" alt="CV/Resume">
-        <div class="work-info">
-          <h3>CV / Resume</h3>
-          <p>See or Download my latest resume.<br> My resume aims to showcase <br> work experience <br>and technical skills<br> that have not been mentioned in the website.</p>
-          <p></p>
+        <span class="terminal-title">isis@portfolio:~/about</span>
+      </div>
+      <nav>
+        <span class="prompt">$</span>
+        <a href="index.html">./home</a>
+        <a href="about.html">./about</a>
+        <a href="contact.html">./contact</a>
+      </nav>
+    </header>
+
+    <section class="hero-section">
+      <div class="terminal-line">
+        <span class="prompt">$</span>
+        <span class="command typewriter">cat experience.log</span>
+      </div>
+      <h1 class="output">Work Experience</h1>
+    </section>
+
+    <section class="work-section">
+      <div class="work-grid">
+
+        <div class="work-card featured">
+          <div class="work-icon jpmc">
+            <span class="icon-text">$_</span>
+          </div>
+          <div class="work-info">
+            <h3>Data Science Fellow</h3>
+            <span class="work-tag">JP Morgan Chase & Co.</span>
+            <span class="work-date">June 2025 - July 2025</span>
+            <p>Applied Python and cloud analytics to explore global datasets. Designed data-driven prototypes in Figma and delivered insights on consumer data patterns in international markets.</p>
+            <div class="skills">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Data Science</span>
+              <span class="skill-tag">Cloud Analytics</span>
+              <span class="skill-tag">Figma</span>
+            </div>
+          </div>
         </div>
-      </a>
-    </div>
-  </section>
 
-  <footer>
-    <p>© 2025 Isis Correa Tume</p>
-  </footer>
-</body>
-</html>
+        <a href="https://www.lakeforest.edu/academics/human-grant/research-assistants" target="_blank" class="work-card">
+          <div class="work-icon">
+            <span class="icon-text">&gt;_</span>
+          </div>
+          <div class="work-info">
+            <h3>Research Assistant</h3>
+            <span class="work-tag">Lake Forest College</span>
+            <p>Working on AI-related research projects and building new courses including "Migration & AI in Spain/Latin America."</p>
+            <p>Collaborated on data management projects with Chicago History Museum, contributing to digital preservation efforts.</p>
+            <div class="skills">
+              <span class="skill-tag">AI Research</span>
+              <span class="skill-tag">Data Management</span>
+              <span class="skill-tag">Curriculum Development</span>
+            </div>
+          </div>
+        </a>
 
-    <p>© 2025 Isis Correa Tume</p>
-  </footer>
+        <a href="Correa Tume Resume.pdf" target="_blank" class="work-card">
+          <div class="work-icon">
+            <span class="icon-text">[]</span>
+          </div>
+          <div class="work-info">
+            <h3>CV / Resume</h3>
+            <span class="work-tag">Download PDF</span>
+            <p>View or download my latest resume showcasing additional work experience and technical skills not covered on this website.</p>
+            <div class="resume-cta">
+              <span class="cta-text">Click to view &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="achievements-section">
+      <div class="terminal-line">
+        <span class="prompt">$</span>
+        <span class="command">cat achievements.txt</span>
+      </div>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <div class="trophy">II</div>
+          <div class="achievement-info">
+            <h3>2nd Place - Lake Forest College Hackathon</h3>
+            <p>Won second place in Lake Forest College's inaugural hackathon, demonstrating problem-solving abilities and collaborative development skills.</p>
+            <span class="year-tag">2025</span>
+          </div>
+        </div>
+        <div class="achievement-card policy">
+          <div class="trophy policy">II</div>
+          <div class="achievement-info">
+            <h3>2nd Place - Public Policy Challenge</h3>
+            <p>Built an economic solution to reduce vaping across the state of Illinois, combining data analysis with policy recommendations.</p>
+            <span class="year-tag">Policy</span>
+          </div>
+        </div>
+        <div class="achievement-card academic">
+          <div class="trophy dean">*</div>
+          <div class="achievement-info">
+            <h3>Dean's List</h3>
+            <p>Recognized for academic excellence at Lake Forest College, maintaining high academic standards while balancing research and projects.</p>
+            <span class="year-tag">Academic</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="interests-section">
+      <div class="terminal-line">
+        <span class="prompt">$</span>
+        <span class="command">grep -r "interests" ./</span>
+      </div>
+      <div class="interests-grid">
+        <div class="interest-item">
+          <span class="interest-icon">//</span>
+          <h4>AI Ethics</h4>
+          <p>Exploring the ethical implications of artificial intelligence and its impact on society</p>
+        </div>
+        <div class="interest-item">
+          <span class="interest-icon">{}</span>
+          <h4>Philosophy of Mind</h4>
+          <p>Understanding consciousness, cognition, and the nature of intelligence</p>
+        </div>
+        <div class="interest-item">
+          <span class="interest-icon">&lt;/&gt;</span>
+          <h4>Startup Building</h4>
+          <p>Creating technology solutions that make a meaningful difference</p>
+        </div>
+        <div class="interest-item">
+          <span class="interest-icon">~$</span>
+          <h4>Automation</h4>
+          <p>Leveraging AI tools to increase efficiency and scale impact</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="terminal-line">
+        <span class="prompt">$</span>
+        <span class="command blink">_</span>
+      </div>
+      <p>&copy; 2025 Isis Correa Tume</p>
+    </footer>
+  </div>
 </body>
 </html>
